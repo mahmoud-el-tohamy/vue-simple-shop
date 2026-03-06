@@ -23,9 +23,14 @@ const discountedPrice = computed(() => {
         <div class="badge badge-dash badge-primary">
           {{ discountedPrice }} EGP
         </div>
-        <div class="badge badge-dash badge-secondary m-2">{{ mainProduct.badge }}</div>
+        <div class="badge badge-dash badge-secondary m-2">
+          {{ mainProduct.badge }}
+        </div>
         <br /><br />
-        <button class="btn btn-outline">Buy Now</button>
+        <button v-if="mainProduct.isAvailable" class="btn btn-outline">
+          Buy Now
+        </button>
+        <button v-else class="btn btn-outline">Out of Stock</button>
       </div>
     </div>
   </div>

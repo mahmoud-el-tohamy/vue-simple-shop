@@ -25,7 +25,10 @@ const discountedPrice = computed(() => {
         {{ discountedPrice }} EGP
       </div>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary">Buy Now</button>
+        <button v-if="product.isAvailable" class="btn btn-primary">
+          Buy Now
+        </button>
+        <button v-else class="btn btn-outline">Out of Stock</button>
       </div>
     </div>
   </div>

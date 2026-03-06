@@ -12,6 +12,7 @@ const mainProduct = {
   price: 120,
   discount: 20,
   tags: ["Fashion", "Casual", "Sport"],
+  isAvailable: true,
 };
 
 const relatedProducts = [
@@ -22,6 +23,7 @@ const relatedProducts = [
     discount: 10,
     image:
       "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    isAvailable: true,
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ const relatedProducts = [
     discount: 0,
     image:
       "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    isAvailable: false,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const relatedProducts = [
     discount: 50,
     image:
       "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    isAvailable: true,
   },
 ];
 </script>
