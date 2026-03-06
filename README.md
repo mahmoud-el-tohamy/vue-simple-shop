@@ -35,22 +35,26 @@ src/
 ## 💻 Getting Started
 
 ### Prerequisites
+
 Make sure you have Node.js installed on your machine.
 
 ### Installation
 
 1. Clone the repository
+
    ```bash
    git clone git@github.com:mahmoud-el-tohamy/vue-simple-shop.git
    cd vue-simple-shop
    ```
 
 2. Install dependencies
+
    ```bash
    npm install
    ```
 
 3. Run the development server
+
    ```bash
    npm run dev
    ```
@@ -58,11 +62,15 @@ Make sure you have Node.js installed on your machine.
 4. Open your browser and navigate to the local URL provided by Vite (e.g., `http://localhost:5173`).
 
 ### Build for Production
+
 To build the app for production, simply run:
+
 ```bash
 npm run build
 ```
+
 This will compile and minify the necessary files into a `dist/` folder.
 
 ## 🤝 Contributing
+
 Feel free to open an issue or submit a pull request if you have ideas on how to improve this project!

@@ -5,7 +5,7 @@
     </div>
     <div class="flex-none">
       <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle mr-4">
           <div class="indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@
           <div class="w-10 rounded-full">
             <img
               alt="Tailwind CSS Navbar component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+              src="../../../public/PP.png"
             />
           </div>
         </div>

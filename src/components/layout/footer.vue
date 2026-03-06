@@ -25,7 +25,11 @@
     <nav>
       <h6 class="footer-title">Social</h6>
       <div class="grid grid-flow-col gap-4">
-        <a href="https://www.linkedin.com/in/mahmoud-el-tohamy/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.linkedin.com/in/mahmoud-el-tohamy/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -38,7 +42,11 @@
             ></path>
           </svg>
         </a>
-        <a href="https://www.instagram.com/iammahmoudx" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.instagram.com/iammahmoudx"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
