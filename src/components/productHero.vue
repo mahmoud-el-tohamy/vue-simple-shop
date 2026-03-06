@@ -20,11 +20,18 @@ const discountedPrice = computed(() => {
         <p class="py-6">
           {{ mainProduct.description }}
         </p>
-        <div class="badge badge-dash badge-primary">
+        <div class="badge badge-dash badge-primary mr-2 mb-1">
           {{ discountedPrice }} EGP
         </div>
-        <div class="badge badge-dash badge-secondary m-2">
+        <div class="badge badge-dash badge-secondary">
           {{ mainProduct.badge }}
+        </div>
+        <br />
+        <div
+          v-for="value in mainProduct.tags"
+          class="badge badge-dash badge-info mr-1"
+        >
+          {{ value }}
         </div>
         <br /><br />
         <button v-if="mainProduct.isAvailable" class="btn btn-outline">
