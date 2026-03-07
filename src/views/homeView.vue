@@ -12,7 +12,7 @@ const props = defineProps(["products"]);
 </script>
 
 <template>
-  <div class="flex justify-center p-10 flex-col min-h-sccreen">
+  <div class="flex justify-center p-10 flex-col min-h-sccreen pics-carousel">
     <h1 class="text-5xl font-bold">Welcome</h1>
     <carouselBanner />
   </div>
@@ -21,3 +21,15 @@ const props = defineProps(["products"]);
     <productCarousel :products="products" />
   </div>
 </template>
+
+<style scoped>
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+    margin: 10px auto;
+  }
+  .pics-carousel {
+    padding: 20px;
+  }
+}
+</style>

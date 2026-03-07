@@ -29,8 +29,20 @@ console.log("this is product from product hero", product.value);
 <template>
   <div class="hero bg-base-200 min-h-screen">
     <div class="hero-content flex-col lg:flex-row">
-      <img :src="product.image" class="max-w-lg rounded-lg shadow-2xl" />
-      <div>
+      <div class="hover-3d">
+        <figure class="max-w-100 rounded-2xl mr-10">
+          <img :src="product.image" class="max-w-lg rounded-lg shadow-2xl" />
+        </figure>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="product-data">
         <h1 class="text-5xl font-bold">{{ product.name }}</h1>
         <p class="py-6">
           {{ product.description }}
@@ -41,14 +53,14 @@ console.log("this is product from product hero", product.value);
         <div v-if="product.badge" class="badge badge-dash badge-secondary">
           {{ product.badge }}
         </div>
-        <br />
-        <div
-          v-for="value in product.tags"
-          class="badge badge-dash badge-info mr-1"
-        >
-          {{ value }}
+        <div id="tags">
+          <div
+            v-for="value in product.tags"
+            class="badge badge-dash badge-info mr-1"
+          >
+            {{ value }}
+          </div>
         </div>
-        <br />
         <div
           class="mr-2 mb-1 mt-2 w-55"
           :class="{
@@ -58,16 +70,33 @@ console.log("this is product from product hero", product.value);
         >
           {{ product.stock }} in stock
         </div>
-        <br /><br />
-        <button
-          v-if="product.stock > 0"
-          class="btn btn-outline"
-          @click="$emit('buyNow', product.id)"
-        >
-          Buy Now
-        </button>
-        <button v-else class="btn btn-outline">Out of Stock</button>
+        <div id="buy-btn">
+          <button
+            v-if="product.stock > 0"
+            class="btn btn-outline"
+            @click="$emit('buyNow', product.id)"
+          >
+            Buy Now
+          </button>
+          <button v-else class="btn btn-outline">Out of Stock</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+@media screen and (max-width: 500px) {
+  figure {
+    margin-right: 0;
+  }
+  #product-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .badge {
+    margin: 0 5px;
+  }
+}
+</style>

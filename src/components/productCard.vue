@@ -21,28 +21,48 @@ const discountedPrice = computed(() => {
 </script>
 
 <template>
-  <div class="card bg-base-100 w-96 m-8 shadow-sm max-h-100">
-    <figure>
-      <img :src="product.image" alt="Shoes" />
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title">{{ product.name }}</h2>
-      <p>
-        {{ product.description }}
-      </p>
-      <div class="badge badge-dash badge-primary">
-        {{ discountedPrice }} EGP
-      </div>
-      <div class="card-actions justify-end">
-        <router-link
-          :to="{ name: 'product', params: { id: product.id } }"
-          v-if="product.stock > 0"
-          class="btn btn-primary"
-        >
-          View
-        </router-link>
-        <button v-else class="btn btn-outline" disabled>Out of Stock</button>
+  <div class="hover-3d">
+    <div
+      class="card w-96 bg-black text-white bg-[radial-gradient(circle_at_bottom_left,#ffffff04_35%,transparent_36%),radial-gradient(circle_at_top_right,#ffffff04_35%,transparent_36%)] bg-size-[4.95em_4.95em] shadow-sm max-h-100"
+    >
+      <figure>
+        <img :src="product.image" alt="Shoes" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">{{ product.name }}</h2>
+        <p>
+          {{ product.description }}
+        </p>
+        <div class="badge badge-dash badge-primary">
+          {{ discountedPrice }} EGP
+        </div>
+        <div class="card-actions justify-end">
+          <router-link
+            :to="{ name: 'product', params: { id: product.id } }"
+            v-if="product.stock > 0"
+            class="btn btn-primary"
+          >
+            View
+          </router-link>
+          <button v-else class="btn btn-outline" disabled>Out of Stock</button>
+        </div>
       </div>
     </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </template>
+
+<style scoped>
+@media screen and (max-width: 500px) {
+  .card {
+    width: 21rem;
+    margin: 10px auto;
+  }
+}
+</style>

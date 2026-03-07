@@ -11,6 +11,7 @@ This project demonstrates core Vue concepts such as reactive state management, d
 - **Interactive Cart**: Clicking "Buy Now" automatically reduces the product stock and increments the global cart counter in the header.
 - **Product Details Page**: Features a responsive `ProductHero` component that displays detailed information, dynamic stock availability, badges, current pricing (with discounts), and related products in a `productCarousel`.
 - **Modern UI Components**: Leverages DaisyUI components (Cards, Badges, Carousels, Heroes) for a clean, consistent, and beautiful interface. 
+- **Engaging Animations**: Features an elegant 3D hover effect on product cards for a premium feel, along with a smooth auto-scrolling image carousel that pauses gracefully on hover.
 - **High-Quality Imagery**: Styled with premium Unsplash images matching the product descriptions (Sneakers, Watches, Boots, Sunglasses, etc.).
 
 ## 🛠️ Tech Stack

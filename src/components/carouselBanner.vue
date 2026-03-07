@@ -1,11 +1,38 @@
 <script setup lang="ts">
 import ProductCard from "@/components/productCard.vue";
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
+
+const carouselRef = ref<HTMLElement | null>(null);
+let scrollInterval: ReturnType<typeof setInterval>;
+
+const startAutoScroll = () => {
+  scrollInterval = setInterval(() => {
+    if (carouselRef.value) {
+      const scrollAmount = (carouselRef.value.children[0] as HTMLElement)?.clientWidth || 300;
+      if (
+        carouselRef.value.scrollLeft + carouselRef.value.clientWidth >=
+        carouselRef.value.scrollWidth - 10
+      ) {
+        carouselRef.value.scrollLeft = 0;
+      } else {
+        carouselRef.value.scrollLeft += scrollAmount;
+      }
+    }
+  }, 3000);
+};
+
+const stopAutoScroll = () => {
+  clearInterval(scrollInterval);
+};
+
 onMounted(() => {
   console.log("carousel Component Mounted");
+  startAutoScroll();
 });
+
 onUnmounted(() => {
   console.log("carousel Component Unmounted");
+  stopAutoScroll();
 });
 
 const props = defineProps(["products"]);
@@ -14,7 +41,12 @@ defineEmits(["view"]);
 </script>
 
 <template>
-  <div class="carousel rounded-box mt-10">
+  <div 
+    class="carousel rounded-box mt-10 scroll-smooth"
+    ref="carouselRef"
+    @mouseenter="stopAutoScroll"
+    @mouseleave="startAutoScroll"
+  >
     <div class="carousel-item">
       <img
         src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=400&h=300&auto=format&fit=crop"
