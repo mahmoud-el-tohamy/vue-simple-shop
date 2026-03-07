@@ -3,6 +3,8 @@ import { computed } from "vue";
 
 const props = defineProps(["product"]);
 
+defineEmits(["view"]);
+
 const discountedPrice = computed(() => {
   if (props.product && props.product.discount > 0) {
     return props.product.price * (1 - props.product.discount / 100);
@@ -12,7 +14,7 @@ const discountedPrice = computed(() => {
 </script>
 
 <template>
-  <div class="card bg-base-100 w-96 m-8 shadow-sm">
+  <div class="card bg-base-100 w-96 m-8 shadow-sm max-h-100">
     <figure>
       <img :src="product.image" alt="Shoes" />
     </figure>
@@ -25,10 +27,14 @@ const discountedPrice = computed(() => {
         {{ discountedPrice }} EGP
       </div>
       <div class="card-actions justify-end">
-        <button v-if="product.isAvailable" class="btn btn-primary">
-          Buy Now
-        </button>
-        <button v-else class="btn btn-outline">Out of Stock</button>
+        <router-link
+          :to="{ name: 'product', params: { id: product.id } }"
+          v-if="product.stock > 0"
+          class="btn btn-primary"
+        >
+          View
+        </router-link>
+        <button v-else class="btn btn-outline" disabled>Out of Stock</button>
       </div>
     </div>
   </div>

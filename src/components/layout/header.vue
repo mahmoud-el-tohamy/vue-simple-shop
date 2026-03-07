@@ -3,6 +3,8 @@
     <div class="flex-1">
       <a class="btn btn-ghost text-xl">Tohamy Store</a>
     </div>
+    <router-link to="/" class="btn btn-ghost text-l">Home</router-link>
+    <router-link to="/about" class="btn btn-ghost text-l">About</router-link>
     <div class="flex-none">
       <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle mr-4">

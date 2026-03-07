@@ -1,2 +1,15 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-neutral);
+}
+
+footer {
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
