@@ -1,3 +1,13 @@
+<script setup>
+import { onMounted, onUnmounted } from "vue";
+onMounted(() => {
+  console.log("Footer Component Mounted");
+});
+onUnmounted(() => {
+  console.log("Footer Component Unmounted");
+});
+</script>
+
 <template>
   <footer
     class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10"
@@ -76,4 +86,3 @@
     </nav>
   </footer>
 </template>
-

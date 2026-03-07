@@ -1,6 +1,14 @@
 <script setup>
 import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
+import { onMounted, onUnmounted } from "vue";
+onMounted(() => {
+  console.log("hero Component Mounted");
+});
+onUnmounted(() => {
+  console.log("hero Component Unmounted");
+});
+
 defineEmits(["buyNow"]);
 const props = defineProps({
   products: { type: Array, required: true },

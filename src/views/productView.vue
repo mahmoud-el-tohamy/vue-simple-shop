@@ -1,8 +1,16 @@
 <script setup>
 import ProductHero from "@/components/productHero.vue";
-import CarouselBanner from "@/components/CarouselBanner.vue";
+import productCarousel from "@/components/productCarousel.vue";
 import { useRoute } from "vue-router";
-import { computed, ref } from "vue";
+import { computed } from "vue";
+import { onMounted, onUnmounted } from "vue";
+onMounted(() => {
+  console.log("pView Component Mounted");
+});
+onUnmounted(() => {
+  console.log("pView Component Unmounted");
+});
+
 defineEmits(["buyNow", "view"]);
 
 const route = useRoute();
@@ -17,9 +25,12 @@ const filteredProducts = computed(() =>
 </script>
 
 <template>
-  <ProductHero :products="props.products" @buyNow="$emit('buyNow', productId)" />
+  <ProductHero
+    :products="props.products"
+    @buyNow="$emit('buyNow', productId)"
+  />
   <div class="flex flex-row flex-wrap justify-center gap-4">
-    <CarouselBanner :products="filteredProducts" />
+    <productCarousel :products="filteredProducts" />
   </div>
 </template>
 

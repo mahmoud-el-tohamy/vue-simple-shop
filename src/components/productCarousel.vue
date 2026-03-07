@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import ProductCard from "@/components/productCard.vue";
+import { onMounted, onUnmounted } from "vue";
+onMounted(() => {
+  console.log("carousel Component Mounted");
+});
+onUnmounted(() => {
+  console.log("carousel Component Unmounted");
+});
+
 const props = defineProps(["products"]);
 
 defineEmits(["view"]);

@@ -1,5 +1,12 @@
 <script setup>
 import { computed } from "vue";
+import { onMounted, onUnmounted } from "vue";
+onMounted(() => {
+  console.log("pcard Component Mounted");
+});
+onUnmounted(() => {
+  console.log("pcard Component Unmounted");
+});
 
 const props = defineProps(["product"]);
 
