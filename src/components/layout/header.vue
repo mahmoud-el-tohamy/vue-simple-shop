@@ -85,6 +85,7 @@ const props = defineProps({
 @media screen and (max-width:500px){
   .logo{
     font-size: 1rem;
+    padding: 5px;
   }
   .nav-btn{
     padding: 5px;

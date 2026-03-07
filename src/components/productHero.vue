@@ -31,7 +31,10 @@ console.log("this is product from product hero", product.value);
     <div class="hero-content flex-col lg:flex-row">
       <div class="hover-3d">
         <figure class="max-w-100 rounded-2xl mr-10">
-          <img :src="product.image" class="max-w-lg rounded-lg shadow-2xl h-100" />
+          <img
+            :src="product.image"
+            class="max-w-lg rounded-lg shadow-2xl h-100 object-cover"
+          />
         </figure>
         <div></div>
         <div></div>
@@ -44,16 +47,16 @@ console.log("this is product from product hero", product.value);
       </div>
       <div id="product-data">
         <h1 class="text-5xl font-bold">{{ product.name }}</h1>
-        <p class="py-6">
+        <p class="pt-6 pb-3">
           {{ product.description }}
         </p>
-        <div class="badge badge-dash badge-primary mr-2 mb-1">
-          {{ discountedPrice }} EGP
-        </div>
-        <div v-if="product.badge" class="badge badge-dash badge-secondary">
-          {{ product.badge }}
-        </div>
         <div id="tags">
+          <div
+            v-if="product.badge"
+            class="badge badge-dash badge-secondary mr-1"
+          >
+            {{ product.badge }}
+          </div>
           <div
             v-for="value in product.tags"
             class="badge badge-dash badge-info mr-1"
@@ -61,6 +64,7 @@ console.log("this is product from product hero", product.value);
             {{ value }}
           </div>
         </div>
+        <h1 class="text-3xl font-bold m-1">{{ discountedPrice }} EGP</h1>
         <div
           class="mr-2 mb-1 mt-2 w-55"
           :class="{
