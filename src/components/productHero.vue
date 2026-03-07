@@ -31,7 +31,7 @@ console.log("this is product from product hero", product.value);
     <div class="hero-content flex-col lg:flex-row">
       <div class="hover-3d">
         <figure class="max-w-100 rounded-2xl mr-10">
-          <img :src="product.image" class="max-w-lg rounded-lg shadow-2xl" />
+          <img :src="product.image" class="max-w-lg rounded-lg shadow-2xl h-100" />
         </figure>
         <div></div>
         <div></div>
